@@ -40,7 +40,7 @@ function Header({ darkTheme, setDarkTheme }: HeaderProps) {
                 <div className="hidden md:flex gap-8 items-center">
                     <ul className="flex gap-6">
                         {["Home", "AboutMe", "Projects", "Skills", "Contact", "SideProjects"].map((section) => (
-                            <li key={section} className="underline-animate group">
+                            <li key={section} className="underline-animate group dark:text-white text-black">
                                 <a href={`#${section}`}>{section.replace(/([A-Z])/g, ' $1').trim()}</a>
                             </li>
                         ))}
