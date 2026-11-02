@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#1a1b26"/>
+<path d="M0 70H1200M0 122H1200M0 590H1200" stroke="#34394d" stroke-width="2"/>
+<rect x="38" y="85" width="165" height="37" fill="#24283b"/>
+<path d="M38 86h165" stroke="#7aa2f7" stroke-width="3"/>
+<text x="62" y="108" fill="#c0caf5" font-size="18" font-family="DejaVu Sans Mono">󰋜 dashboard</text>
+<text x="45" y="46" fill="#9ece6a" font-size="22" font-family="DejaVu Sans Mono">◈</text>
+<text x="82" y="46" fill="#8b93ad" font-size="18" font-family="DejaVu Sans Mono">~/lucas/portfolio</text>
+<text x="75" y="202" fill="#9ece6a" font-size="19" font-family="DejaVu Sans Mono">// PERSONAL DASHBOARD</text>
+<text x="75" y="302" fill="#7aa2f7" font-size="76" font-weight="bold" font-family="DejaVu Sans Mono">LUCAS</text>
+<text x="75" y="390" fill="#c0caf5" font-size="59" font-weight="bold" font-family="DejaVu Sans">Lucas Narloch Zabla</text>
+<text x="75" y="445" fill="#bb9af7" font-size="24" font-family="DejaVu Sans Mono">const</text>
+<text x="164" y="445" fill="#c0caf5" font-size="24" font-family="DejaVu Sans Mono">role = </text>
+<text x="280" y="445" fill="#9ece6a" font-size="24" font-family="DejaVu Sans Mono">"Backend Developer"</text>
+<rect x="0" y="590" width="161" height="40" fill="#7aa2f7"/>
+<text x="25" y="617" fill="#1a1b26" font-size="19" font-weight="bold" font-family="DejaVu Sans Mono">NORMAL</text>
+<text x="190" y="617" fill="#c0caf5" font-size="18" font-family="DejaVu Sans Mono">portfolio.lua</text>
+<text x="1070" y="617" fill="#8b93ad" font-size="17" font-family="DejaVu Sans Mono">UTF-8</text>
+</svg>
