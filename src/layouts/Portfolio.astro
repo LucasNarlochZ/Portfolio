@@ -1,0 +1,105 @@
+---
+import { content, skills, type Language } from '../data';
+import '../style.css';
+
+const { language } = Astro.props as { language: Language };
+const t = content[language];
+const base = import.meta.env.BASE_URL;
+const origin = 'https://lucasnarlochz.github.io/Portfolio/';
+const canonical = language === 'pt' ? `${origin}pt/` : origin;
+const title = language === 'pt' ? 'Lucas Narloch Zabla | Desenvolvedor Backend' : 'Lucas Narloch Zabla | Backend Developer';
+const description = language === 'pt'
+  ? 'Portfólio de Lucas Narloch Zabla: desenvolvedor backend em Curitiba, com experiência em Python, FastAPI, AWS, sistemas IoT e projetos open source.'
+  : 'Portfolio of Lucas Narloch Zabla, a backend developer in Curitiba building reliable systems with Python, FastAPI, AWS and open source projects.';
+const tabs = [
+  ['about', 'about.md'], ['experience', 'experience.log'], ['projects', 'projects/'], ['skills', 'stack.yaml'], ['contact', 'contact.txt'],
+];
+const preview = { agent: 'agent-iam.png', chaos: 'learning-in-chaos.png', sun: 'sunlog.png' } as Record<string, string>;
+const art = {
+  agent: `agent → git / gh / aws\n        ↓\n    policy.yaml\n   allow | deny\n        ↓\n    audit.log`,
+  code: `source.ps → tokens → AST\n                    ↓\n               semantic\n                    ↓\n              LLVM IR\n                    ↓\n                binary`,
+} as Record<string, string>;
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Person',
+  name: 'Lucas Narloch Zabla', jobTitle: language === 'pt' ? 'Desenvolvedor Backend' : 'Backend Developer',
+  url: canonical,
+  sameAs: ['https://github.com/LucasNarlochZ', 'https://www.linkedin.com/in/lucasnarloch'],
+  knowsAbout: ['Python', 'FastAPI', 'AWS', 'TypeScript', 'Backend Engineering'],
+};
+---
+<!doctype html>
+<html lang={language === 'pt' ? 'pt-BR' : 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a1b26" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Lucas Narloch Zabla" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lucas Narloch Zabla" />
+    <meta property="og:locale" content={language === 'pt' ? 'pt_BR' : 'en_US'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${origin}preview/portfolio.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lucas Narloch Zabla — Backend Developer portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${origin}preview/portfolio.png`} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={origin} />
+    <link rel="alternate" hreflang="pt-BR" href={`${origin}pt/`} />
+    <link rel="alternate" hreflang="x-default" href={origin} />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <title>{title}</title>
+  </head>
+  <body data-language={language} data-base={base}>
+    <a class="skip-link" href="#main">{language === 'pt' ? 'Pular para o conteúdo' : 'Skip to content'}</a>
+    <header class="editor-top">
+      <div class="top-bar"><span class="editor-mark"></span><span>~/lucas/portfolio</span><span class="top-spacer"></span><span class="workspace-state"><i></i> {t.available}</span><a class="lang-switch" href={language === 'pt' ? `${base}` : `${base}pt/`} aria-label={language === 'pt' ? 'Switch to English' : 'Mudar para português'}>{language === 'pt' ? 'EN' : 'PT-BR'}</a></div>
+      <nav class="tabline" aria-label={language === 'pt' ? 'Seções' : 'Sections'}>
+        <a class="tab home-tab active" href="#home" data-tab="home"><span>󰋜</span> dashboard</a>
+        {tabs.map(([id, label]) => <a class="tab" href={`#${id}`} data-tab={id}><span class="tab-icon">{id === 'projects' ? '󰉋' : '󰈙'}</span> {label}<span class="tab-close" aria-hidden="true">×</span></a>)}
+      </nav>
+    </header>
+    <div class="editor-grid">
+      <aside class="gutter" aria-hidden="true"><div id="line-numbers"></div></aside>
+      <main id="main">
+        <section class="hero section" id="home" data-file="dashboard">
+          <div class="hero-copy">
+            <div class="breadcrumb"><span class="comment">// welcome to my workspace</span><span class="crumb-right">01 / 06</span></div>
+            <p class="dashboard-label">◈ {language === 'pt' ? 'PAINEL PESSOAL' : 'PERSONAL DASHBOARD'}</p>
+            <pre class="ascii" aria-hidden="true">{String.raw`██╗     ██╗   ██╗ ██████╗ █████╗ ███████╗
+██║     ██║   ██║██╔════╝██╔══██╗██╔════╝
+██║     ██║   ██║██║     ███████║███████╗
+██║     ██║   ██║██║     ██╔══██║╚════██║
+███████╗╚██████╔╝╚██████╗██║  ██║███████║
+╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝`}</pre>
+            <h1>Lucas Narloch Zabla<span class="block-cursor" aria-hidden="true"></span></h1>
+            <p class="hero-role"><span class="keyword">const</span> role <span class="operator">=</span> <span class="string">"{t.current}"</span><span class="punctuation">;</span></p>
+            <p class="hero-summary">{t.summary}</p>
+            <div class="dashboard-actions"><a href="#projects"><kbd>p</kbd> {language === 'pt' ? 'projetos' : 'projects'} <span>↗</span></a><a href="#contact"><kbd>c</kbd> {language === 'pt' ? 'contato' : 'contact'} <span>↗</span></a><a href="https://github.com/LucasNarlochZ" target="_blank" rel="noopener noreferrer"><kbd>↗</kbd> github <span>↗</span></a></div>
+            <div class="hero-hint"><span>󰘳</span> <span>j / k</span> scroll <span>·</span> <span>gg / G</span> jump <span>·</span> <span>/</span> search <span>·</span> <span>:</span> command</div>
+          </div>
+          <div class="hero-side" aria-label="Profile YAML"><div class="window-title"><span></span> profile.yaml <span class="window-meta">readonly</span></div><div class="yaml"><div><span class="key">name</span><span class="punctuation">:</span> <span class="string">"Lucas Narloch Zabla"</span></div><div><span class="key">location</span><span class="punctuation">:</span> <span class="string">"{t.location}"</span></div><div><span class="key">focus</span><span class="punctuation">:</span></div><div class="indent"><span class="operator">-</span> backend systems</div><div class="indent"><span class="operator">-</span> cloud infrastructure</div><div class="indent"><span class="operator">-</span> software reliability</div><div class="yaml-gap"></div><div><span class="comment"># currently</span></div><div><span class="key">status</span><span class="punctuation">:</span> <span class="string">"{t.available}"</span></div></div><div class="window-foot"> &nbsp; All systems operational</div></div>
+        </section>
+        <section class="section content-section" id="about" data-file="about.md"><div class="section-head"><span class="section-path">01 / about.md</span><span class="comment">// {t.aboutLabel}</span></div><div class="two-col"><div><h2><span class="hash">#</span> {t.aboutTitle}</h2></div><div class="body-copy"><p>{t.aboutText}</p><div class="callout"><span class="operator">&gt;</span> {t.education}</div></div></div></section>
+        <section class="section content-section" id="experience" data-file="experience.log"><div class="section-head"><span class="section-path">02 / experience.log</span><span class="comment">// {t.expLabel}</span></div><h2><span class="hash">#</span> {t.expTitle}</h2><div class="timeline">{[
+          { title: t.current, dates: `10/2026 — ${t.present}`, bullets: t.currentBullets },
+          { title: t.intern, dates: '10/2024 — 09/2026', bullets: t.internBullets },
+        ].map((job, i) => <article class="job"><div class="job-index">0{i + 1}<span>│</span></div><div><div class="job-heading"><div><h3>{job.title}</h3><p>SmartLy <span>· {t.location}</span></p></div><time>{job.dates}</time></div><ul>{job.bullets.map(b => <li><span aria-hidden="true">›</span>{b}</li>)}</ul></div></article>)}</div></section>
+        <section class="section content-section projects-section" id="projects" data-file="projects/"><div class="section-head"><span class="section-path">03 / projects/</span><span class="comment">// {t.projectsLabel}</span></div><div class="section-title-row"><h2><span class="hash">#</span> {t.projectsTitle}</h2><span class="section-count">{t.selected}</span></div><div class="telescope" aria-label="Project explorer"><div class="telescope-bar"><span>󰍉</span> {language === 'pt' ? 'Explorador de projetos' : 'Project explorer'} <span class="telescope-count">{t.projects.length} results</span></div><div class="telescope-body"><div class="project-list" role="listbox" aria-label={language === 'pt' ? 'Selecione um projeto' : 'Select a project'}>{t.projects.map((project, i) => <button class:list={['project-option', { selected: i === 0 }]} type="button" role="option" aria-selected={i === 0 ? 'true' : 'false'} data-project={i} data-search={`${project.name} ${project.category} ${project.description} ${project.tags.join(' ')}`.toLowerCase()}><span class="project-number">0{i + 1}</span><span class="project-option-name">{project.name}<small>{project.category}</small></span><span>↗</span></button>)}</div><div class="project-preview">{t.projects.map((project, i) => <article class:list={['preview-item', { selected: i === 0 }]} data-preview={i}><div class="preview-screen"><div class="preview-label">{project.name.toLowerCase().replaceAll(' ', '-')}.preview</div>{preview[project.visual] ? <img src={`${base}${preview[project.visual]}`} alt={language === 'pt' ? `Captura de tela do projeto ${project.name}` : `Screenshot of ${project.name}`} loading="lazy" width="760" height="420" /> : <pre aria-hidden="true">{art[project.visual]}</pre>}</div><div class="preview-content"><p class="comment">// {project.category}</p><h3>{project.name}</h3><p>{project.description}</p><div class="tags">{project.tags.map(tag => <span>{tag}</span>)}</div><div class="project-links"><a href={project.link} target="_blank" rel="noopener noreferrer"> &nbsp;{t.projectLink} ↗</a>{project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">{t.live} ↗</a>}</div></div></article>)}</div></div><div class="telescope-footer"><span>↑↓ navigate</span><span>enter select</span><span>/ filter</span></div></div><p class="search-empty" hidden>{language === 'pt' ? 'Nenhum projeto encontrado.' : 'No projects found.'}</p></section>
+        <section class="section content-section" id="skills" data-file="stack.yaml"><div class="section-head"><span class="section-path">04 / stack.yaml</span><span class="comment">// {t.skillsLabel}</span></div><h2><span class="hash">#</span> {t.skillsTitle}</h2><div class="stack-panel"><div class="stack-head"><span> &nbsp; stack.yaml</span><span>16 entries</span></div><div class="stack-grid">{skills.map((skill, i) => <div><span class="stack-number">{String(i + 1).padStart(2, '0')}</span><span class="key">-</span> <span class="string">{skill}</span></div>)}</div></div></section>
+        <section class="section content-section contact-section" id="contact" data-file="contact.txt"><div class="section-head"><span class="section-path">05 / contact.txt</span><span class="comment">// {t.contactLabel}</span></div><div class="two-col"><div><h2><span class="hash">#</span> {t.contactTitle}</h2><p class="contact-lead">{t.contactText}</p></div><div class="contact-panel"><div class="contact-panel-head"><span>󰇮 &nbsp; new_message.txt</span><span class="insert-indicator">-- INSERT --</span></div><form id="contact-form"><label for="contact-name">{language === 'pt' ? 'Seu nome' : 'Your name'}</label><input id="contact-name" name="name" required autocomplete="name" placeholder={language === 'pt' ? 'Como posso te chamar?' : 'What should I call you?'} /><label for="contact-message">{language === 'pt' ? 'Mensagem' : 'Message'}</label><textarea id="contact-message" name="message" required rows="4" placeholder={language === 'pt' ? 'Conte sobre a sua ideia...' : 'Tell me about your idea...'}></textarea><button type="submit">{language === 'pt' ? 'Abrir no e-mail' : 'Open in email'} ↗</button></form><div class="contact-social"><a href="mailto:lucasnarloch123@gmail.com">✉ &nbsp; email</a><a href="https://github.com/LucasNarlochZ" target="_blank" rel="noopener noreferrer"> &nbsp; github</a><a href="https://www.linkedin.com/in/lucasnarloch" target="_blank" rel="noopener noreferrer">in &nbsp; linkedin</a></div></div></div></section>
+        <footer class="page-footer">{t.footer} <span>© {new Date().getFullYear()}</span></footer>
+      </main>
+    </div>
+    <div class="command-overlay" id="command-overlay" hidden><div class="command-box"><span id="command-prefix">:</span><input id="command-input" type="text" autocomplete="off" spellcheck="false" aria-label={language === 'pt' ? 'Comando ou busca' : 'Command or search'} /><span class="command-help" id="command-help">esc to close</span></div></div>
+    <div class="statusline" aria-live="off"><span class="mode" id="mode-label">NORMAL</span><span class="status-file"> &nbsp; portfolio.lua</span><span class="status-section" id="status-section">dashboard</span><span class="status-spacer"></span><span class="status-lang">{language === 'pt' ? 'PT-BR' : 'EN'}</span><span>UTF-8</span><span id="status-percent">0%</span><span id="status-position">1:1</span></div>
+    <script src="../scripts/editor.ts"></script>
+  </body>
+</html>

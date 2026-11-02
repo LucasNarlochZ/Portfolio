@@ -32,11 +32,7 @@ export const content = {
     internBullets: [
       "Cut AWS costs by 20%, including a 75% reduction in CloudWatch spend by identifying unused IoT Core logs.",
       "Introduced Amazon SQS event-driven processing for peaks above 40,000 notifications per day.",
-      "Built Terraform infrastructure from scratch and created a staging environment.",
       "Created a FastAPI test suite with pytest and Testcontainers: 120 integration and 300 unit tests.",
-      "Implemented IoT data migration across MySQL, DynamoDB, S3 and AWS IoT Core via MQTT.",
-      "Automated deployments with GitHub Actions and Bash, reducing manual steps and configuration risk.",
-      "Helped consolidate serverless functions into FastAPI, centralizing business rules.",
       "Resolved Lambda edge cases using CloudWatch metrics, reducing average errors from 113 to 5 per five-minute interval.",
     ],
     projectsLabel: "Selected work",
@@ -58,7 +54,7 @@ export const content = {
         description:
           "An open-source CLI that enforces capability-based policies for AI coding agents. Intercepts Git, GitHub CLI and AWS actions, evaluates them against policy, and records an audit trail.",
         tags: ["TypeScript", "Node.js", "Security", "CLI"],
-        link: "https://github.com/LucasNarZ/AgentIAM",
+        link: "https://github.com/LucasNarlochZ/agent-iam",
         visual: "agent",
       },
       {
@@ -67,7 +63,7 @@ export const content = {
         description:
           "A browser-based incident simulator where players investigate ambiguous production symptoms, test hypotheses and learn system design through consequences and postmortems.",
         tags: ["TypeScript", "React", "Systems Design", "Open Source"],
-        link: "https://github.com/LucasNarZ/learning-in-chaos",
+        link: "https://github.com/LucasNarlochZ/learning-in-chaos",
         visual: "chaos",
       },
       {
@@ -122,11 +118,7 @@ export const content = {
     internBullets: [
       "Reduzi os custos AWS em 20%, incluindo 75% no CloudWatch, identificando logs IoT Core sem uso.",
       "Introduzi processamento assíncrono orientado a eventos com Amazon SQS para picos acima de 40 mil notificações por dia.",
-      "Estruturei a infraestrutura com Terraform e criei um ambiente de staging.",
       "Criei uma suíte de testes FastAPI com pytest e Testcontainers: 120 testes de integração e 300 unitários.",
-      "Implementei migração de dados IoT entre MySQL, DynamoDB, S3 e AWS IoT Core via MQTT.",
-      "Automatizei deploys com GitHub Actions e Bash, reduzindo etapas manuais e riscos de configuração.",
-      "Participei da consolidação de funções serverless em FastAPI, centralizando regras de negócio.",
       "Corrigi casos extremos em Lambdas com métricas do CloudWatch, reduzindo erros médios de 113 para 5 por intervalo de cinco minutos.",
     ],
     projectsLabel: "Trabalhos selecionados",
@@ -148,7 +140,7 @@ export const content = {
         description:
           "CLI open source que aplica políticas baseadas em capacidades para agentes de programação. Intercepta ações de Git, GitHub CLI e AWS, avalia as regras e registra uma trilha de auditoria.",
         tags: ["TypeScript", "Node.js", "Segurança", "CLI"],
-        link: "https://github.com/LucasNarZ/AgentIAM",
+        link: "https://github.com/LucasNarlochZ/agent-iam",
         visual: "agent",
       },
       {
@@ -157,7 +149,7 @@ export const content = {
         description:
           "Simulador de incidentes no navegador: jogadores investigam sintomas ambíguos de produção, testam hipóteses e aprendem design de sistemas com as consequências e postmortems.",
         tags: ["TypeScript", "React", "Sistemas", "Open Source"],
-        link: "https://github.com/LucasNarZ/learning-in-chaos",
+        link: "https://github.com/LucasNarlochZ/learning-in-chaos",
         visual: "chaos",
       },
       {

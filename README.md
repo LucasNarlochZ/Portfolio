@@ -1,21 +1,26 @@
-# Portfolio
+# Lucas Narloch Zabla — Portfolio
 
-Welcome to my portfolio!  
-I’m a software developer passionate about building applications, solving problems, and learning new technologies.  
+A static Astro portfolio with a Neovim inspired interface. It is available in English at `/Portfolio/` and Portuguese at `/Portfolio/pt/`.
 
-## About Me
-- 💻 Full-stack and low-level programming enthusiast  
-- 🚀 Experience with AWS, IoT, and backend development  
-- 🎮 Interested in game development and compilers  
-- 📚 Always exploring new challenges in computer science  
+## Development
 
-## Projects
-Here you will find some of my personal and academic projects, including:  
-- Web applications  
-- IoT solutions  
-- Game development experiments  
-- Compilers and low-level programming  
+```sh
+npm install
+npm run dev
+npm run check
+npm run build
+npm run preview
+```
 
-## Contact
-- [LinkedIn](www.linkedin.com/in/lucasnarloch)  
-- [GitHub](https://github.com/LucasNarZ)  
+The site is configured for GitHub Pages at `https://lucasnarlochz.github.io/Portfolio/`. `dist/` contains the static output. Run `npm run deploy` to publish it with `gh-pages` when you are ready.
+
+## Navigation
+
+Click the buffer tabs or use `j` / `k` to scroll, `gg` / `G` to jump, `/` to filter projects, and `:` for commands such as `:projects`, `:contact`, and `:lang pt`. The dashboard also supports `p` and `c`.
+
+The contact form opens the visitor's email application with a prepared message; it does not submit data to a server.
+
+## Links
+
+- [GitHub](https://github.com/LucasNarlochZ)
+- [LinkedIn](https://www.linkedin.com/in/lucasnarloch)
